@@ -4,6 +4,7 @@ import "./fanta.css"
 import Head from "./head";
 import Link from "next/link";
 import Cart from "@/components/Cart";
+import EmailInput from "@/components/EmailInput";
 
 
 
@@ -20,18 +21,29 @@ export default function RootLayout({ children }) {
         <div id="portal" />
         <div id="app">
           <header>
-            <Link href={'/'}>
-              <h1>StickerSphere</h1>
-            </Link>
+            <div className='header-content'>
+              <Link href={'/'}>
+                <h1>StickerSphere</h1>
+              </Link>
 
-            <h5 className='mid-text'>- Cool stuff for cool people -</h5>
-            <Cart />
+              <h5 className='mid-text'>- Cool stuff for cool people -</h5>
+              <Cart />
+            </div>
           </header>
           <main>
             {children}
           </main>
           <div className='hr' />
-          <footer></footer>
+          <footer>
+            <div className='email-container'>
+              <h5>Get a sneak peak at new additions to the store, special offers, and so much more.</h5>
+              <EmailInput />
+            </div>
+
+            <div className='links-container'></div>
+
+            <div className='socials'></div>
+          </footer>
         </div>
       </body>
     </html>

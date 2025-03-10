@@ -40,8 +40,23 @@ export default function RootLayout({ children }) {
               <EmailInput />
             </div>
 
-            <div className='links-container'></div>
-
+            <div className='links-container'>
+              <div>
+                <h3>Tom Hennessy</h3>
+                <Link href={'/'}>Portfolio</Link>
+                <Link href={'/'}>GitHub</Link>
+              </div>
+              <div>
+                <h3>Store</h3>
+                <Link href={'/'}>Home</Link>
+                <Link href={'/cart'}>Cart</Link>
+              </div>
+              <div>
+                <h3>Support</h3>
+                <Link href={'/contact'}>Contact</Link>
+                <Link href={'/faq'}>FAQs</Link>
+              </div>
+            </div>
             <div className='socials'></div>
           </footer>
         </div>

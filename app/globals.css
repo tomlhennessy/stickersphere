@@ -137,3 +137,41 @@ footer .links-container > div {
 }
 
 /* break points */
+
+@media (min-width: 640px) {
+    .header-content {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .mid-text {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .header-content i {
+        font-size: 1.8rem;
+    }
+}
+
+
+@media (min-width: 768px) {
+    footer {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2rem;
+    }
+
+    .email-container {
+        padding-right: 4rem;
+    }
+
+    .socials {
+        grid-column: span 2 / span 2;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    footer .links-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}

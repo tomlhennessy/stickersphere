@@ -1,7 +1,7 @@
 export default function ImageBanner() {
     return (
-        <div>
-            
+        <div className='banner-images'>
+
         </div>
     )
 }

@@ -9,7 +9,7 @@ import EmailInput from "@/components/EmailInput";
 
 
 export const metadata = {
-  title: "StickerSphere",
+  title: "Stickr",
   description: "A super cool store for programmers and productivity fiends!",
 };
 
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
           <header>
             <div className='header-content'>
               <Link href={'/'}>
-                <h1>StickerSphere</h1>
+                <h1>Stickr</h1>
               </Link>
 
               <h5 className='mid-text'>- Cool stuff for cool people -</h5>

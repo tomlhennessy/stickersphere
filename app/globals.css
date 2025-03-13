@@ -266,6 +266,9 @@ footer .links-container > div {
     font-size: 2rem;
 }
 
+
+
+
 /* break points */
 
 @media (min-width: 640px) {
@@ -297,7 +300,7 @@ footer .links-container > div {
     }
 
     .section-header {
-        margin: 2rem auto 5rem auto;
+        margin: 4rem auto 3rem auto;
     }
 
     .sticker-container {
@@ -321,9 +324,22 @@ footer .links-container > div {
         grid-column: span 2 / span 2;
     }
 
+    .sticker-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
 }
 
 @media (min-width: 1024px) {
+    .planner-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 4rem;
+    }
+
+    .sticker-container {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
     footer .links-container {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }

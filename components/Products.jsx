@@ -21,7 +21,7 @@ export default function Products() {
                     <p>From organisation to accessorisation</p>
                 </div>
 
-                <div className='planner-content'>
+                <div className='planner-container'>
                     <div>
                         <button className='img-button'>
                             <img src='low_res/planner.jpeg' alt='high-res-planner' />

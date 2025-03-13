@@ -62,12 +62,47 @@ header {
 }
 
 
-
-
-
 /* main app */
 
+.low-res-img,
+.high-res-img {
+    object-fit: cover;
+    height: 100%;
+    flex: 1;
+    width: 100%;
+    object-position: center;
+    border-radius: 0;
+    max-width: unset;
+}
 
+.high-res-img {
+    position: absolute;
+    inset: 0;
+    transition-duration: 200ms;
+    z-index: 4;
+}
+
+.cta-btns-container {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta-btns-container h1 {
+    font-size: 2rem;
+}
+
+
+.banner-images {
+    min-height: 90vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    fle-direction: column;
+}
 
 
 /* footer styles */

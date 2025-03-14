@@ -1,6 +1,11 @@
 'use client'
 
+import { useState } from "react"
+import Portal from "./Portal"
+
 export default function Products() {
+    const [portalImage, setPortalImage] = useState(null)
+
     const stickerDescriptions = {
         CSS_HTML_Javascript: "Core web technologies for structure, styling, interactivity.",
         Docker: "Platform for containerising, deploying and scaling applications",
@@ -15,6 +20,13 @@ export default function Products() {
 
     return (
         <>
+            {portalImage && (
+                <Portal handleClosePortal={() => { setPortalImage(null) }}>
+                    <div className='portal-content'>
+                        <img className='img-display' src={`med_res/${portalImage}.jpeg`} alt={`${portalImage}-high-res`} />
+                    </div>
+                </Portal>
+            )}
             <div className='section-container'>
                 <div className='section-header'>
                     <h2>Shop Our Selection</h2>
@@ -23,7 +35,9 @@ export default function Products() {
 
                 <div className='planner-container'>
                     <div>
-                        <button className='img-button'>
+                        <button onClick={() => {
+                            setPortalImage('planner')
+                        }} className='img-button'>
                             <img src='low_res/planner.jpeg' alt='high-res-planner' />
                         </button>
                     </div>
@@ -55,7 +69,9 @@ export default function Products() {
                     {stickers.map((sticker, stickerIndex) => {
                         return (
                             <div key={stickerIndex} className='sticker-card'>
-                                <button className='img-button'>
+                                <button onClick={() => {
+                                    setPortalImage(sticker)
+                                }} className='img-button'>
                                     <img src={`low_res/${sticker}.jpeg`} alt={`${sticker}-low-res`} />
                                 </button>
                                 <div className='sticker-info'>

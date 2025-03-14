@@ -266,7 +266,54 @@ footer .links-container > div {
     font-size: 2rem;
 }
 
+/* portal overlay */
 
+.portal-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1001;
+}
+
+.portal-underlay {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.7;
+    background: #030615;
+    border: none;
+    padding: none;
+}
+
+.portal-content {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1005;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    display: grid;
+    place-items: center;
+}
+
+.img-button {
+    height: fit-content;
+    width: fit-content;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    cursor: zoom-in;
+    border-radius: none;
+}
+
+.img-button:hover {
+    transform: none;
+    box-shadow: none;
+}
 
 
 /* break points */

@@ -63,12 +63,12 @@ export default function Products(props) {
                         return (
                             <div key={stickerIndex} className='sticker-card'>
                                 <button onClick={() => {
-                                    setPortalImage(stickerName)
+                                    setPortalImage(stickerImageUrl)
                                 }} className='img-button'>
                                     <img src={`low_res/${stickerImgUrl}.jpeg`} alt={`${stickerImgUrl}-low-res`} />
                                 </button>
                                 <div className='sticker-info'>
-                                    <p className='text-medium'>{stickerName.replaceAll('_', ' ')}</p>
+                                    <p className='text-medium'>{stickerName}</p>
                                     <p>{sticker.description}</p>
                                     <h4><span>$</span>{sticker.prices[0].unit_amount / 100}</h4>
                                     <button>Add to cart</button>

@@ -198,6 +198,14 @@ main,
     padding: 1rem;
 }
 
+.sticker-info h4 {
+    font-size: 1.8rem;
+}
+
+.sticker-info h4 span {
+    font-size: 0.8rem;
+    padding-right: 0.1rem;
+}
 
 /* footer styles */
 .hr {

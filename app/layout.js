@@ -16,9 +16,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-  <ProductsProvider>
     <html lang="en">
       <Head />
+      <ProductsProvider>
       <body>
         <div id="portal" />
         <div id="app">
@@ -69,7 +69,7 @@ export default function RootLayout({ children }) {
           </footer>
         </div>
       </body>
-    </html>
-  </ProductsProvider>
+    </ProductsProvider>
+  </html>
   );
 }

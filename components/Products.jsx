@@ -2,10 +2,13 @@
 
 import { useState } from "react"
 import Portal from "./Portal"
+import { useProducts } from "@/context/ProductContext"
 
 export default function Products(props) {
     const { planner, stickers } = props
     const [portalImage, setPortalImage] = useState(null)
+
+    const { handeAddProduct, cart } = useProducts()
 
     if (!stickers.length || !planner) {return null}
 

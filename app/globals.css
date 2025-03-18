@@ -42,11 +42,15 @@ header {
     align-items: center;
     justify-content: flex-end;
     position: relative;
+    padding-right: 0.5rem;
 }
 
 .cart-num {
     position: absolute;
-    top:
+    top: -8px;
+    right: -5px;
+    color: #030615;
+    font-family: "Grenze", serif;
 }
 
 .header-content h1 {

@@ -9,20 +9,27 @@ export default function ProductsProvider(props) {
 
     const [cart, setCart] = useState({})
 
-    function handleIncrementProduct(price_id, num) {
+    function handleIncrementProduct(price_id, num, data) {
         const newCart = {
             ...cart
         }
         if (price_id in cart) {
             // product is already in cart, take previous value and increment/decrement it
-            newCart[price_id] = newCart[price_id] + num
+            // newCart[price_id] = newCart[price_id] + num
+            newCart[price_id] = {
+                ...data,
+                quantity: newCart[price_id]?.quantity + num
+            }
 
         } else {
             // product not yet in cart, so add it
-            newCart[price_id] = num
+            newCart[price_id] = {
+                ...data,
+                quantity: num
+            }
         }
 
-        if (newCart[price_id] === 0) {
+        if (newCart[price_id].quantity === 0) {
             // the user has set the number to 0,  so we remove product from cart
             delete newCart[price_id]
         }

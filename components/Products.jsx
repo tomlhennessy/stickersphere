@@ -51,7 +51,7 @@ export default function Products(props) {
                         <div className='purchase-buttons'>
                             <button onClick={() => {
                                 const plannerPriceId = planner.default_price
-                                handleIncrementProduct(plannerPriceId, 1)
+                                handleIncrementProduct(plannerPriceId, 1, planner)
                             }}>Add to cart</button>
                         </div>
                     </div>
@@ -79,7 +79,7 @@ export default function Products(props) {
                                     <h4><span>$</span>{sticker.prices[0].unit_amount / 100}</h4>
                                     <button onClick={() => {
                                         const stickerPriceId = sticker.default_price
-                                        handleIncrementProduct(stickerPriceId, 1)
+                                        handleIncrementProduct(stickerPriceId, 1, sticker)
                                     }}>Add to cart</button>
                                 </div>
                             </div>

@@ -26,6 +26,9 @@ export default function ProductsProvider(props) {
             // the user has set the number to 0,  so we remove product from cart
             delete newCart[price_id]
         }
+
+        // overwrite the cart state with the newCart object
+        setCart(newCart)
     }
 
     const value = {

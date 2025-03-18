@@ -26,10 +26,21 @@ export default function CartPage() {
                   <h3>{itemData.name}</h3>
                   <p>{itemData.description.slice(0, 100)}{itemData.description.length > 100 ? '...' : ''}</p>
                   <h4>${itemData.prices[0].unit_amount / 100}</h4>
+                  <div className='quantity-container'>
+                    <p><strong>Quantity</strong></p>
+                    <input value={itemQuantity} placeholder="2"
+                    onChange={() => {
+
+                    }}></input>
+                  </div>
                 </div>
               </div>
             )
           })}
+        </div>
+        <div className='checkout-container'>
+          <button>&larr; Continue shopping</button>
+          <button>Checkout &rarr;</button>
         </div>
       </section>
     );

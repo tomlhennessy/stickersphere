@@ -6,6 +6,33 @@ export default function CartPage() {
 
   const { cart } = useProducts()
 
+  async function createCheckout() {
+    try {
+      const baseURL = process.env.NEXT_PUBLIC_BASE_URL
+      const lineItems = Object.keys(cart).map((item, itemIndex) => {
+          return {
+            price: item,
+            quantity: cart[item].quantity
+          }
+      })
+
+      const response = await fetch(baseURL + '/api/checkout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ lineItems })
+      })
+      const data = await response.json()
+      if (response.ok) {
+        console.log(data)
+      }
+
+    } catch (err) {
+      console.log('Error creating checkout', err.message)
+    }
+  }
+
 
     return (
       <section className='cart-section'>
@@ -40,7 +67,7 @@ export default function CartPage() {
         </div>
         <div className='checkout-container'>
           <button>&larr; Continue shopping</button>
-          <button>Checkout &rarr;</button>
+          <button onClick={createCheckout}>Checkout &rarr;</button>
         </div>
       </section>
     );

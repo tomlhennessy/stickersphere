@@ -1,9 +1,11 @@
 'use client'
 
 import { useProducts } from "@/context/ProductContext";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function CartPage() {
-
+  const router = useRouter()
   const { cart } = useProducts()
 
   async function createCheckout() {
@@ -26,6 +28,7 @@ export default function CartPage() {
       const data = await response.json()
       if (response.ok) {
         console.log(data)
+        router.push(data.url)
       }
 
     } catch (err) {
@@ -37,6 +40,7 @@ export default function CartPage() {
     return (
       <section className='cart-section'>
         <h2>Your Cart</h2>
+        {Object.keys(cart).length === 0 && (<p>You have no items in your cart!</p>)}
         <div className='cart-container'>
           {Object.keys(cart).map((item, itemIndex) => {
             const itemData = cart[item]
@@ -66,7 +70,9 @@ export default function CartPage() {
           })}
         </div>
         <div className='checkout-container'>
-          <button>&larr; Continue shopping</button>
+          <Link href={'/'}>
+            <button>&larr; Continue shopping</button>
+          </Link>
           <button onClick={createCheckout}>Checkout &rarr;</button>
         </div>
       </section>

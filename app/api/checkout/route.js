@@ -8,7 +8,14 @@ export async function POST(request) {
     try {
         const { lineItems } = await request.json()
 
-        return Response.json({ message: 'Success' })
+        const session = await stripe.checkout.sessions.create({
+            mode: Payment,
+            line_items: lineItems,
+            success_url: process.env.NEXT_PUBLIC_BASE_URL + '/success',
+            cancel_url: process.env.NEXT_PUBLIC_BASE_URL + '/'
+        })
+
+        return Response.json(session)
 
     } catch (err) {
         console.error('Error creating cart checkout', err.message)

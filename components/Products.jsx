@@ -69,7 +69,7 @@ export default function Products(props) {
                         return (
                             <div key={stickerIndex} className='sticker-card'>
                                 <button onClick={() => {
-                                    setPortalImage(stickerImageUrl)
+                                    setPortalImage(stickerImgUrl)
                                 }} className='img-button'>
                                     <img src={`low_res/${stickerImgUrl}.jpeg`} alt={`${stickerImgUrl}-low-res`} />
                                 </button>

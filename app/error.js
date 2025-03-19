@@ -7,7 +7,7 @@ export default function Error(props) {
 
     useEffect(() => {
         console.log(error)
-    }, [])
+    }, [error])
 
     return (
         <div className='page-container'>

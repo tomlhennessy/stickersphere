@@ -62,8 +62,8 @@ export default function RootLayout({ children }) {
             <div className='socials'>
               <p>© <a href='' target='_blank'>Tom Hennessy</a> 2025 <br />Built with NextJS 🔥</p>
               <div className='social-links'>
-                <Link href={'/'} target='_blank'><i className="fa-brands fa-github"></i></Link>
-                <Link href={'/'} target='_blank'><i className="fa-brands fa-linkedin"></i></Link>
+                <Link href="https://github.com/tomlhennessy" target='_blank'><i className="fa-brands fa-github"></i></Link>
+                <Link href="https://www.linkedin.com/in/tomlhennessy96/?originalSubdomain=uk" target='_blank'><i className="fa-brands fa-linkedin"></i></Link>
               </div>
             </div>
           </footer>

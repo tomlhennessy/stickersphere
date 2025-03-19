@@ -46,7 +46,7 @@ export default function RootLayout({ children }) {
               <div>
                 <h3>Tom Hennessy</h3>
                 <Link href={'/'}>Portfolio</Link>
-                <Link href={'/'}>GitHub</Link>
+                <Link target="_blank" href="https://github.com/tomlhennessy/stickr">GitHub</Link>
               </div>
               <div>
                 <h3>Store</h3>

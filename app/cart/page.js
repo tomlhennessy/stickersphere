@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 export default function CartPage() {
   const router = useRouter()
-  const { cart } = useProducts()
+  const { cart, handleIncrementProduct } = useProducts()
 
   async function createCheckout() {
     try {
@@ -59,9 +59,11 @@ export default function CartPage() {
                   <h4>${itemData.prices[0].unit_amount / 100}</h4>
                   <div className='quantity-container'>
                     <p><strong>Quantity</strong></p>
-                    <input value={itemQuantity} placeholder="2"
-                    onChange={() => {
+                    <input type='number' value={itemQuantity} placeholder="2"
+                    onChange={(e) => {
+                      const newValue = e.target.value
 
+                      handleIncrementProduct(itemData.default_price, newValue, itemData, true)
                     }}></input>
                   </div>
                 </div>

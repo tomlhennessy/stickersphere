@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { useProducts } from "@/context/ProductContext"
 import Link from "next/link"
@@ -7,7 +7,7 @@ export default function Cart() {
     const { cart } = useProducts()
     const numProducts = Object.keys(cart).reduce((acc, curr, currIndex) => {
         const numProduct = cart[curr].quantity
-        const sum = acc + numProduct
+        const sum = acc + parseInt(numProduct)
         return sum
     }, 0)
 

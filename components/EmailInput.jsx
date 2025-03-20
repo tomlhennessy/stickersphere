@@ -4,10 +4,15 @@ import { useState } from "react"
 
 export default function EmailInput() {
     const [email, setEmail] = useState('')
+    const [message, setMessage] = useState('')
 
     async function handleAddSubscriber() {
         try {
-            // write post fetch request to send email to the service you use to build up email list
+            const response = await fetch("/api/emails", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email})
+            })
 
         } catch (err) {
             console.log('Failed to add subscriber: ', err.message)

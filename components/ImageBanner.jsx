@@ -6,6 +6,15 @@ export default function ImageBanner() {
     const [isLoaded, setIsLoaded] = useState(false)
     const imgRef = useRef()
 
+    const plannerRef = useRef(null)
+    const stickersRef = useRef(null)
+
+    function scrollToSection(ref) {
+        if (ref.current) {
+            ref.current.scrollIntoView({ behavior: "smooth" })
+        }
+    }
+
     useEffect(() => {
         if (imgRef.current.complete) {
             setIsLoaded(true)
@@ -26,8 +35,8 @@ export default function ImageBanner() {
                         <h1>The Stickr Store</h1>
                     </div>
                     <div>
-                        <button>Shop stickers</button>
-                        <button>Shop planner</button>
+                        <button onClick={() => {scrollToSection(stickersRef)}}>Shop stickers</button>
+                        <button onClick={() => {scrollToSection(plannerRef)}}>Shop planner</button>
                     </div>
                 </div>
             </div>

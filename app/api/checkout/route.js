@@ -8,6 +8,8 @@ const stripe = new Stripe(API_KEY, {
 
 export async function POST(request) {
     try {
+        console.log("STRIPE_SECRET_KEY loaded?", !!process.env.STRIPE_SECRET_KEY)
+
         const { lineItems } = await request.json()
 
         const session = await stripe.checkout.sessions.create({
@@ -17,7 +19,7 @@ export async function POST(request) {
             cancel_url: process.env.NEXT_PUBLIC_BASE_URL + '/'
         })
 
-        return Response.json(session)
+        return new Response.json(session)
 
     } catch (err) {
         console.error('Error creating cart checkout', err.message)

@@ -20,16 +20,22 @@ export default function CartPage() {
 
       const response = await fetch(baseURL + '/api/checkout', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ lineItems })
-      })
-      const data = await response.json()
-      if (response.ok) {
-        console.log(data)
-        router.push(data.url)
+      });
+      if (!response.ok) {
+        console.error("Stripe Checkout Error:", await response.text());
+        alert("Checkout failed. Please try again.");
+        return;
       }
+      const data = await response.json();
+      if (data.error) {
+        console.error("Stripe API Error:", data.error);
+        alert("Error processing payment.");
+        return;
+      }
+      router.push(data.url);
+
 
     } catch (err) {
       console.log('Error creating checkout', err.message)

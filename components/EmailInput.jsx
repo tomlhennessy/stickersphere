@@ -14,8 +14,14 @@ export default function EmailInput() {
                 body: JSON.stringify({ email})
             })
 
+            const data = await response.json()
+            if (!response.ok) throw new Error(data.error)
+
+            setMessage("You're subscribed!")
+            setEmail("")
+
         } catch (err) {
-            console.log('Failed to add subscriber: ', err.message)
+            setMessage("Error: " + err.message)
         }
     }
 
@@ -25,6 +31,7 @@ export default function EmailInput() {
                 setEmail(e.target.value)
             }} placeholder='Email address...' />
             <button onClick={handleAddSubscriber} className='button-card'>Sign Up</button>
+            {message && (<p>{message}</p>)}
         </div>
     )
 }

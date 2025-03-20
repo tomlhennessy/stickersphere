@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react"
+import { useState } from "react"
 import Portal from "./Portal"
 import { useProducts } from "@/context/ProductContext"
 
@@ -9,9 +9,6 @@ export default function Products(props) {
     const [portalImage, setPortalImage] = useState(null)
 
     const { handleIncrementProduct, cart } = useProducts()
-
-    const plannerRef = useRef(null)
-    const stickersRef = useRef(null)
 
     if (!stickers.length || !planner) {return null}
 
@@ -30,7 +27,7 @@ export default function Products(props) {
                     <p>From organisation to accessorisation</p>
                 </div>
 
-                <div ref={plannerRef} className='planner-container'>
+                <div id="planner-section" className='planner-container'>
                     <div>
                         <button onClick={() => {
                             setPortalImage('planner')
@@ -60,7 +57,7 @@ export default function Products(props) {
                     </div>
                 </div>
             </div>
-            <div ref={stickersRef} className='section-container'>
+            <div id="stickers-section" className='section-container'>
                 <div className='section-header'>
                     <h2>Or Collect From Your Favourite Tech</h2>
                     <p>Choose from our custom designed tech logos</p>

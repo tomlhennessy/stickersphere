@@ -1,6 +1,8 @@
 import ImageBanner from "@/components/ImageBanner";
 import Products from "@/components/Products";
 
+/* STATIC FETCH (BEST FOR PERFORMANCE AND SEO) */
+
 export async function getProducts() {
     try {
         const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
